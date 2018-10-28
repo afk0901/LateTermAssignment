@@ -4,8 +4,7 @@
 #
 version: 2
 jobs:
-    deploy_to_staging:
-       working_directory: ~/dist
+  build:
     docker:
       # specify the version you desire here
       - image: circleci/node
@@ -15,10 +14,11 @@ jobs:
       # documented at https://circleci.com/docs/2.0/circleci-images/
       # - image: circleci/mongo:3.4.4
 
+    working_directory: ~/dist
+
     steps:
       - checkout
-      - attach_workspace:
-           at: ~/dist
+
       # Download and cache dependencies
       - restore_cache:
           keys:
