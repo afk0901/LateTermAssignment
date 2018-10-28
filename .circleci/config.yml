@@ -2,13 +2,14 @@
 #
 # Check https://circleci.com/docs/2.0/language-javascript/ for more details
 #
+#
 version: 2
 jobs:
-deploy_to_staging:
-  build:
-    docker:
-      # specify the version you desire here
-      - image: circleci/node
+  deploy_to_staging:
+    build:
+      docker:
+        # specify the version you desire here
+        - image: circleci/node
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
