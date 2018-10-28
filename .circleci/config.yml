@@ -5,7 +5,6 @@
 #
 version: 2
 jobs:
-  deploy_to_staging:
     build:
       docker:
         # specify the version you desire here
