@@ -4,6 +4,7 @@
 #
 version: 2
 jobs:
+deploy_to_staging:
   build:
     docker:
       # specify the version you desire here
@@ -29,7 +30,7 @@ jobs:
 
       - run: npm install
       - run: npm run build
-    
+      
       - store_artifacts:
           path: /home/circleci/dist/dist/administrationManual.pdf
         
