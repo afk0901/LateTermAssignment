@@ -2,13 +2,12 @@
 #
 # Check https://circleci.com/docs/2.0/language-javascript/ for more details
 #
-#
 version: 2
 jobs:
-    build:
-      docker:
-        # specify the version you desire here
-        - image: circleci/node
+  build:
+    docker:
+      # specify the version you desire here
+      - image: circleci/node
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -16,7 +15,6 @@ jobs:
       # - image: circleci/mongo:3.4.4
 
     working_directory: ~/dist
-    
 
     steps:
       - checkout
@@ -30,7 +28,7 @@ jobs:
 
       - run: npm install
       - run: npm run build
-      
+    
       - store_artifacts:
           path: /home/circleci/dist/dist/administrationManual.pdf
         
@@ -39,11 +37,14 @@ jobs:
         
       - store_artifacts:
           path: /home/circleci/dist/dist/developmentManual.pdf
-         
+          
+
+             
+
       - save_cache:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-  
+
       # run tests!
       - run: yarn test
