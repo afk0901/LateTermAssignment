@@ -15,10 +15,7 @@ jobs:
       # - image: circleci/mongo:3.4.4
 
     working_directory: ~/dist
-
     
-workflows:
-  version: 2
   build-deploy:
     jobs:
       - build
