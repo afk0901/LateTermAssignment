@@ -75,3 +75,12 @@ workflows:
           filters:
             branches:
               only: master
+    jobs:
+      - build
+      - puppyteertests:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master      
+              
