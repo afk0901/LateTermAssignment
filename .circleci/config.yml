@@ -46,13 +46,13 @@ jobs:
       # run tests!
       - run: yarn test
       
-  deploy:
+  deploy_to_staging:
     docker:
      - image: buildpack-deps:trusty
     steps:
       - checkout
       - run:
-         name: Deploy Master to Heroku
+         name: Deploy Master to Heroku staging server
          command: |
            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
 workflows:
@@ -60,7 +60,7 @@ workflows:
   build-deploy:
     jobs:
       - build
-      - deploy:
+      - deploy_to_staging:
           requires:
             - build
           filters:
