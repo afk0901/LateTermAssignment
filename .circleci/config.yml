@@ -60,9 +60,9 @@ jobs:
     docker:
      - image: circleci/node
      steps:
-     - checkout
-     - run: 
-         node ./end-to-end-test.js
+       - checkout
+       - run: 
+          node ./end-to-end-test.js
     
 workflows:
   version: 2
