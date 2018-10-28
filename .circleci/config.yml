@@ -16,15 +16,7 @@ jobs:
 
     working_directory: ~/dist
     
-  build-deploy:
-    jobs:
-      - build
-      - deploy:
-          requires:
-            - build
-          filters:
-            branches:
-              only: master
+
     steps:
       - checkout
 
