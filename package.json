@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "nodemon",
     "start": "node server",
+    "puppyteer": "node ./end-to-end-test.js",
     "test": "jest",
     "watch": "jest --watchAll",
     "build": "webpack && jest --coverage --coverageDirectory=dist/coverage/jest && mdpdf docs/designReport.md dist/designReport.pdf && mdpdf docs/administrationManual.md dist/administrationManual.pdf && mdpdf docs/developmentManual.md dist/developmentManual.pdf",
