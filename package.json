@@ -18,7 +18,8 @@
   "dependencies": {
     "express": "^4.16.4",
     "lodash": "^4.17.11",
-    "mdpdf": "^1.7.2"
+    "mdpdf": "^1.7.2",
+    "puppeteer": "^1.9.0"
   },
   "devDependencies": {
     "clean-webpack-plugin": "^0.1.19",
