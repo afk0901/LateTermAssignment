@@ -29,6 +29,7 @@ jobs:
       - run: npm install
       - run: npm run build
       - run: yarn add puppeteer
+      - run: node ./end-to-end-test.js
    
       - store_artifacts:
           path: /home/circleci/dist/dist/administrationManual.pdf
