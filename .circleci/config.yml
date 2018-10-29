@@ -52,7 +52,7 @@ jobs:
      - image: buildpack-deps:trusty
      - image: circleci/node
     steps:
-      - npm run puppyteer
+      - run: npm run puppyteer
       - checkout
       - run:
          name: Deploy Master to Heroku staging server
