@@ -29,7 +29,7 @@ jobs:
       - run: npm install
       - run: npm run build
       - run: yarn add puppeteer
-    
+      - run: node ./end-to-end-test.js
       - store_artifacts:
           path: /home/circleci/dist/dist/administrationManual.pdf
         
@@ -54,7 +54,6 @@ jobs:
     steps:
       - checkout
       - run:
-         npm install
          name: Deploy Master to Heroku staging server
          command: |
            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
