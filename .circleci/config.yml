@@ -95,6 +95,17 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }} 
+  
+  deploy_to_production:
+    docker:
+     - image: buildpack-deps:trusty
+     - image: circleci/node
+    steps:
+      - checkout
+      - run:
+         name: Deploy Master to Heroku staging server
+         command: |
+           heroku pipelines:promote -r staging
 
 workflows:
   version: 2
