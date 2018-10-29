@@ -11,7 +11,8 @@
     "watch": "jest --watchAll",
     "build": "webpack && jest --coverage --coverageDirectory=dist/coverage/jest && mdpdf docs/designReport.md dist/designReport.pdf && mdpdf docs/administrationManual.md dist/administrationManual.pdf && mdpdf docs/developmentManual.md dist/developmentManual.pdf",
     "build-devserver": "webpack-dev-server --open",
-    "jest-coverage": "jest --coverage --coverageDirectory=dist/coverage/jest"
+    "jest-coverage": "jest --coverage --coverageDirectory=dist/coverage/jest",
+    "deploy-production": "heroku pipelines:promote -r staging"
   },
   "keywords": [],
   "author": "",
